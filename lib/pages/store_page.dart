@@ -5,8 +5,9 @@ class StorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("yuh"),
-    );
+    return SafeArea(
+        child: Scaffold(
+      body: Column(children: [Text("data")]),
+    ));
   }
 }
