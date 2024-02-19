@@ -11,7 +11,7 @@ class StorePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 60,
+            height: 30,
           ),
           Center(
             child: Text(
@@ -30,11 +30,17 @@ class StorePage extends StatelessWidget {
                 color: Theme.of(context).hintColor,
               ),
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding:
+                    EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(Icons.search),
-                    SizedBox(width: 5),
+                    Icon(
+                      Icons.search,
+                      size: 30,
+                    ),
+                    SizedBox(width: 10),
                     Expanded(
                       child: TextField(
                         decoration: InputDecoration(
