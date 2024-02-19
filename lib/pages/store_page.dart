@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_shop_application/widgets/custom_search_bar.dart';
 
 class StorePage extends StatelessWidget {
   const StorePage({super.key});
@@ -22,39 +23,7 @@ class StorePage extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Theme.of(context).hintColor,
-              ),
-              child: Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: 30,
-                    ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Search Product or Brand",
-                            hintStyle: Theme.of(context).textTheme.bodyMedium,
-                            border: InputBorder.none),
-                        cursorColor: Theme.of(context).highlightColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          )
+          CustomSearchBar()
         ],
       )),
     );
