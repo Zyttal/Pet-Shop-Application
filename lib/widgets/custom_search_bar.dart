@@ -27,6 +27,10 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Icon(
+                Icons.search,
+                size: 30,
+              ),
               SizedBox(width: 10),
               Expanded(
                 child: TextField(
@@ -37,10 +41,6 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   cursorColor: Theme.of(context).highlightColor,
                   onChanged: _handleSearch,
                 ),
-              ),
-              Icon(
-                Icons.search,
-                size: 30,
               ),
             ],
           ),
