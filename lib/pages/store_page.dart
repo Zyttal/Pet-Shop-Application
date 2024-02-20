@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_shop_application/mock_data.dart';
+import 'package:pet_shop_application/pages/details_page.dart';
 import 'package:pet_shop_application/providers/navigation_provider.dart';
 import 'package:pet_shop_application/widgets/bottom_nav_bar.dart';
 import 'package:pet_shop_application/widgets/custom_search_bar.dart';
@@ -51,7 +52,11 @@ class StorePage extends StatelessWidget {
                     subtitle: Text('${pet.weight} kg - ${pet.height} cm'),
                     trailing: Text('\$${pet.price.toStringAsFixed(2)}'),
                     onTap: () {
-                      // Handle tapping on a pet
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailsPage(petID: pet.ID)));
                     });
               },
             ),
