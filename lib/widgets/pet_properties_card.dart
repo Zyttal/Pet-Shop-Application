@@ -19,28 +19,26 @@ class PetPropertiesCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: Color.fromARGB(29, 152, 255, 152),
           borderRadius: BorderRadius.circular(18)),
-      child: Expanded(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                property,
-                style:
-                    GoogleFonts.poppins(color: Color(0xFF5F5F63), fontSize: 16),
-              ),
-              Text(
-                propertyValue,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: Theme.of(context).highlightColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18),
-              )
-            ],
-          ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              property,
+              style:
+                  GoogleFonts.poppins(color: Color(0xFF5F5F63), fontSize: 16),
+            ),
+            Text(
+              propertyValue,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                  color: Theme.of(context).highlightColor,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18),
+            )
+          ],
         ),
       ),
     );
