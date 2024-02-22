@@ -27,31 +27,22 @@ class PetStore {
   final int ID;
   final String name;
   final String location;
+  final int distance;
 
-  PetStore({required this.ID, required this.name, required this.location});
+  PetStore(
+      {required this.ID,
+      required this.name,
+      required this.location,
+      required this.distance});
 }
 
 final List<Pet> PetList = [
   Pet(
       ID: 0,
       peekImageURL:
-          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263217/Pet%20Store%20Application%20Assets/Preview%20Images/0_qvgri3.png',
-      mainImageURL:
-          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263297/Pet%20Store%20Application%20Assets/Main%20Images/0_cuoruh.png',
-      breed: 'Persian Cat',
-      description:
-          'The Persian cat, also known as the Persian Longhair, is a long-haired breed of cat characterized by a round face and short muzzle. These elegant felines have a distinctive appearance, originating in Persia (modern-day Iran).',
-      weight: 3.5,
-      height: 22,
-      color: "Gold",
-      price: 85.00,
-      petStoreID: 0),
-  Pet(
-      ID: 1,
-      peekImageURL:
           'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263217/Pet%20Store%20Application%20Assets/Preview%20Images/1_qidbjt.png',
       mainImageURL:
-          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263296/Pet%20Store%20Application%20Assets/Main%20Images/1_kcifds.png',
+          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263297/Pet%20Store%20Application%20Assets/Main%20Images/0_cuoruh.png',
       breed: 'Sphinx Cat',
       description:
           'The Sphinx cat, hairless and charming, boasts a velvety skin in various colors and patterns. Playful and affectionate, they capture hearts with their unique appearance and lively personalities.',
@@ -59,6 +50,20 @@ final List<Pet> PetList = [
       height: 22,
       color: "Gold",
       price: 60.00,
+      petStoreID: 0),
+  Pet(
+      ID: 1,
+      peekImageURL:
+          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263217/Pet%20Store%20Application%20Assets/Preview%20Images/0_qvgri3.png',
+      mainImageURL:
+          'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263296/Pet%20Store%20Application%20Assets/Main%20Images/1_kcifds.png',
+      breed: 'Persian Cat',
+      description:
+          'The Persian cat, also known as the Persian Longhair, is a long-haired breed of cat characterized by a round face and short muzzle. These elegant felines have a distinctive appearance, originating in Persia (modern-day Iran).',
+      weight: 3.5,
+      height: 22,
+      color: "Gold",
+      price: 85.00,
       petStoreID: 0),
   Pet(
       ID: 2,
@@ -103,7 +108,7 @@ final List<Pet> PetList = [
       price: 75.00,
       petStoreID: 1),
   Pet(
-      ID: 4,
+      ID: 5,
       peekImageURL:
           'https://res.cloudinary.com/dbwwffypj/image/upload/v1708263217/Pet%20Store%20Application%20Assets/Preview%20Images/5_z5n3i4.png',
       mainImageURL:
@@ -119,6 +124,6 @@ final List<Pet> PetList = [
 ];
 
 final List<PetStore> PetStoreList = [
-  PetStore(ID: 0, name: "Cat Store", location: "Somewhere"),
-  PetStore(ID: 1, name: "Dog Store", location: "Somewhere")
+  PetStore(ID: 0, name: "Cat Store", location: "Somewhere", distance: 10),
+  PetStore(ID: 1, name: "Dog Store", location: "Somewhere", distance: 8)
 ];

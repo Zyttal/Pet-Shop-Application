@@ -28,7 +28,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.search,
                 size: 30,
               ),
