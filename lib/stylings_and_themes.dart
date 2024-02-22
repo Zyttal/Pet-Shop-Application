@@ -19,7 +19,7 @@ TextTheme getCustomTextTheme(BuildContext context) {
       bodySmall: const TextStyle(
           fontSize: 12, fontWeight: FontWeight.normal, color: Colors.black),
       displaySmall: TextStyle(fontSize: 13, color: Theme.of(context).hintColor),
-      bodyLarge: TextStyle(fontSize: 18, color: Color(0xFF5F5F63))));
+      bodyLarge: const TextStyle(fontSize: 18, color: Color(0xFF5F5F63))));
 }
 
 ThemeData getCustomThemeData(BuildContext context) {

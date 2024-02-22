@@ -17,7 +17,7 @@ class PetPropertiesCard extends StatelessWidget {
       width: 110,
       height: 80,
       decoration: BoxDecoration(
-          color: Color.fromARGB(29, 152, 255, 152),
+          color: const Color.fromARGB(29, 152, 255, 152),
           borderRadius: BorderRadius.circular(18)),
       child: Padding(
         padding: const EdgeInsets.only(left: 15),
@@ -27,8 +27,8 @@ class PetPropertiesCard extends StatelessWidget {
           children: [
             Text(
               property,
-              style:
-                  GoogleFonts.poppins(color: Color(0xFF5F5F63), fontSize: 16),
+              style: GoogleFonts.poppins(
+                  color: const Color(0xFF5F5F63), fontSize: 16),
             ),
             Text(
               propertyValue,

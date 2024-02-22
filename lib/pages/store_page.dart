@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:pet_shop_application/mock_data.dart';
-import 'package:pet_shop_application/pages/details_page.dart';
 import 'package:pet_shop_application/providers/cart_provider.dart';
 import 'package:pet_shop_application/providers/navigation_provider.dart';
 import 'package:pet_shop_application/widgets/bottom_nav_bar.dart';
@@ -21,7 +18,7 @@ class StorePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Center(
@@ -30,15 +27,15 @@ class StorePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            CustomSearchBar(),
+            const CustomSearchBar(),
             Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: GridList(cartProvider: cartProvider),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

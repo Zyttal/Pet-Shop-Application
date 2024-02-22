@@ -11,6 +11,7 @@ class CustomSearchBar extends StatefulWidget {
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final TextEditingController _searchController = TextEditingController();
+  // ignore: unused_field
   String _searchQuery = "";
 
   @override
@@ -23,7 +24,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           color: Theme.of(context).hintColor,
         ),
         child: Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,7 +34,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 Icons.search,
                 size: 30,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: TextField(
                   controller: _searchController,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pet_shop_application/mock_data.dart';
 
-class Description_Card extends StatelessWidget {
-  const Description_Card({
+class DescriptionCard extends StatelessWidget {
+  const DescriptionCard({
     super.key,
     required this.screenWidth,
     required this.matchedPet,
@@ -66,7 +66,7 @@ class Description_Card extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Theme.of(context).highlightColor,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Center(
+                    child: const Center(
                         child: Icon(
                       Icons.fullscreen,
                       color: Colors.white,

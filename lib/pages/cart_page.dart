@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
         child: Column(children: [
           ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: cartProvider.pets.length,
             itemBuilder: (context, index) {
               final pet = cartProvider.pets[index];
@@ -31,14 +31,14 @@ class CartPage extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   title: Text(pet.breed),
-                  subtitle: Text('${petStore.name}'),
+                  subtitle: Text(petStore.name),
                   trailing: Column(
                     children: [
                       InkWell(
-                        child: Icon(Icons.delete_outline_sharp),
+                        child: const Icon(Icons.delete_outline_sharp),
                         onTap: () => {cartProvider.remove(pet)},
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(

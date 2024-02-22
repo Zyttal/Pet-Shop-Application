@@ -12,10 +12,10 @@ class GridList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: PetList.length,
       itemBuilder: (context, index) {
         final pet = PetList[index];
@@ -41,6 +41,8 @@ class GridList extends StatelessWidget {
                 height: 100,
                 width: 145,
                 clipBehavior: Clip.hardEdge,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(14)),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(14),
                   onTap: () => {
@@ -54,15 +56,14 @@ class GridList extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(14)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 3,
               ),
               Text(
                 pet.breed,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
               Row(

@@ -8,7 +8,7 @@ import 'package:pet_shop_application/widgets/pet_properties_card.dart';
 import 'package:provider/provider.dart';
 
 class DetailsPage extends StatelessWidget {
-  DetailsPage({super.key, required this.petID});
+  const DetailsPage({super.key, required this.petID});
   final int petID;
 
   @override
@@ -19,7 +19,7 @@ class DetailsPage extends StatelessWidget {
         (petStore) => matchedPet.petStoreID == petStore.ID);
 
     double screenWidth = MediaQuery.of(context).size.width;
-    var data = "Weight";
+
     return Scaffold(
       body: SingleChildScrollView(
         child: GestureDetector(
@@ -38,13 +38,13 @@ class DetailsPage extends StatelessWidget {
                   fit: BoxFit.cover,
                   height: 400,
                 ),
-                Description_Card(
+                DescriptionCard(
                     screenWidth: screenWidth,
                     matchedPet: matchedPet,
                     matchedStore: matchedStore),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 65,
             ),
             Padding(
@@ -52,11 +52,11 @@ class DetailsPage extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.pets,
                     size: 20,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
@@ -66,7 +66,7 @@ class DetailsPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -88,7 +88,7 @@ class DetailsPage extends StatelessWidget {
                 matchedPet.description,
                 style: GoogleFonts.poppins(
                     fontSize: 16,
-                    color: Color(0xFFA1A1A1),
+                    color: const Color(0xFFA1A1A1),
                     fontWeight: FontWeight.w300),
               ),
             )
