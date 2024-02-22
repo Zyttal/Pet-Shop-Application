@@ -14,6 +14,8 @@ class BottomNavBar extends StatelessWidget {
     return BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedItemColor: Theme.of(context).highlightColor,
+        unselectedFontSize: 12,
+        selectedFontSize: 12,
         type: BottomNavigationBarType.fixed,
         currentIndex: navigationProvider.selectedIndex,
         onTap: (int index) {
@@ -32,13 +34,19 @@ class BottomNavBar extends StatelessWidget {
           }
         },
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.library_books), label: "Catalog"),
+              icon: Icon(
+                Icons.home_filled,
+                size: 20,
+              ),
+              label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined), label: "Cart"),
+              icon: Icon(Icons.library_books, size: 20), label: "Catalog"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin), label: "Profile")
+              icon: Icon(Icons.shopping_cart_outlined, size: 20),
+              label: "Cart"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_pin, size: 20), label: "Profile")
         ]);
   }
 }
