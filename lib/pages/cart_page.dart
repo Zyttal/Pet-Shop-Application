@@ -11,7 +11,7 @@ class CartPage extends StatelessWidget {
     final navigationProvider = Provider.of<NavigationProvider>(context);
 
     return Scaffold(
-      body: Text("yuh"),
+      body: Column(children: []),
       bottomNavigationBar: BottomNavBar(navigationProvider: navigationProvider),
     );
   }

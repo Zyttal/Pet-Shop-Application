@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_shop_application/mock_data.dart';
 import 'package:pet_shop_application/pages/details_page.dart';
+import 'package:pet_shop_application/providers/cart_provider.dart';
 
 class GridList extends StatelessWidget {
-  const GridList({
-    super.key,
-  });
+  const GridList({super.key, required this.cartProvider});
+
+  final CartProvider cartProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +73,11 @@ class GridList extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         fontSize: 12, color: Theme.of(context).highlightColor),
                   ),
-                  Icon(Icons.shopping_cart,
-                      size: 12, color: Theme.of(context).highlightColor)
+                  InkWell(
+                    onTap: () => {cartProvider.add(pet)},
+                    child: Icon(Icons.shopping_cart,
+                        size: 12, color: Theme.of(context).highlightColor),
+                  )
                 ],
               )
             ]),
