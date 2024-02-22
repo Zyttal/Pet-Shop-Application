@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pet_shop_application/mock_data.dart';
+import 'package:pet_shop_application/pages/details_page.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({
@@ -10,52 +12,53 @@ class CustomSearchBar extends StatefulWidget {
 }
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
-  final TextEditingController _searchController = TextEditingController();
+  final SearchController searchController = SearchController();
   // ignore: unused_field
-  String _searchQuery = "";
+  List<Pet> filteredPets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredPets = PetList;
+    searchController.addListener(onSearchChanged);
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void onSearchChanged() {
+    String query = searchController.text.toLowerCase();
+    setState(() {
+      filteredPets =
+          PetList.where((pet) => pet.breed.toLowerCase().contains(query))
+              .toList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25, right: 25),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Theme.of(context).hintColor,
-        ),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.search,
-                size: 30,
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                      hintText: "Search Product or Brand",
-                      hintStyle: Theme.of(context).textTheme.bodyMedium,
-                      border: InputBorder.none),
-                  cursorColor: Theme.of(context).highlightColor,
-                  onChanged: _handleSearch,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: SearchAnchor.bar(
+          searchController: searchController,
+          suggestionsBuilder:
+              (BuildContext context, SearchController controller) {
+            return filteredPets.map((pet) {
+              return ListTile(
+                title: Text(pet.breed),
+                onTap: (() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailsPage(petID: pet.ID)));
+                }),
+              );
+            }).toList();
+          }),
     );
-  }
-
-  void _handleSearch(String input) {
-    setState(() {
-      _searchQuery = input;
-    });
   }
 }
