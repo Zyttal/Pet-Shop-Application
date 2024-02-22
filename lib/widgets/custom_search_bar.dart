@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_shop_application/mock_data.dart';
 import 'package:pet_shop_application/pages/details_page.dart';
 
@@ -29,7 +30,6 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     super.dispose();
   }
 
-  @override
   void onSearchChanged() {
     String query = searchController.text.toLowerCase();
     setState(() {
@@ -44,6 +44,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: SearchAnchor.bar(
+          isFullScreen: true,
           searchController: searchController,
           suggestionsBuilder:
               (BuildContext context, SearchController controller) {
