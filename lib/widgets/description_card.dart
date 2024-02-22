@@ -17,7 +17,8 @@ class Description_Card extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
         bottom: -50,
-        left: (screenWidth - 360) / 2,
+        left: 10,
+        right: 10,
         child: Padding(
           padding: const EdgeInsets.only(left: 25, right: 25),
           child: Container(
