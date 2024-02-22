@@ -4,11 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 TextTheme getCustomTextTheme(BuildContext context) {
   return GoogleFonts.poppinsTextTheme(TextTheme(
       displayLarge: const TextStyle(
-          fontSize: 40, fontWeight: FontWeight.bold, color: Color(0xFFE8BE13)),
+          fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
       headlineMedium: const TextStyle(
-          fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFFE8BE13)),
+          fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
       headlineSmall: const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
       labelLarge: const TextStyle(
           fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),
       labelMedium: const TextStyle(

@@ -48,7 +48,7 @@ final List<Pet> PetList = [
           'The Sphinx cat, hairless and charming, boasts a velvety skin in various colors and patterns. Playful and affectionate, they capture hearts with their unique appearance and lively personalities.',
       weight: 3.5,
       height: 22,
-      color: "Gold",
+      color: "Dark Pink",
       price: 60.00,
       petStoreID: 0),
   Pet(
