@@ -15,27 +15,29 @@ class StorePage extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Center(
-            child: Text(
-              "Store",
-              style: Theme.of(context).textTheme.titleMedium,
+          child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 20,
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CustomSearchBar(),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: ListView.builder(
+            Center(
+              child: Text(
+                "Store",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            CustomSearchBar(),
+            SizedBox(
+              height: 10,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: PetList.length,
               itemBuilder: (context, index) {
                 final pet = PetList[index];
@@ -59,9 +61,9 @@ class StorePage extends StatelessWidget {
                                   DetailsPage(petID: pet.ID)));
                     });
               },
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       )),
       bottomNavigationBar: BottomNavBar(navigationProvider: navigationProvider),
     );
