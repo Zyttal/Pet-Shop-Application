@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_shop_application/mock_data.dart';
 import 'package:pet_shop_application/pages/details_page.dart';
 
